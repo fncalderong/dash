@@ -243,9 +243,9 @@ def exchangechange(exchange):
 @app.callback(
     [
         dash.dependencies.Output('monthly-chart', 'figure'),
-        dash.dependencies.Output('market-returns-div', 'children'),
-        dash.dependencies.Output('strat-returns', 'children'),
         dash.dependencies.Output('market-vs-returns', 'children'),
+        dash.dependencies.Output('strat-returns', 'children'),
+        dash.dependencies.Output('strat-vs-market', 'children'),
     ],
     (
             dash.dependencies.Input('exchange-select', 'value'),
@@ -355,4 +355,4 @@ def update_line(exchange, leverage, start_date, end_date):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=True, host='0.0.0.0')
